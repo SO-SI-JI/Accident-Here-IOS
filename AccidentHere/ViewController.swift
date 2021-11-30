@@ -5,9 +5,8 @@
 //  Created by 이소민 on 2021/11/23.
 //
 
+import CoreLocation
 import UIKit
-import CoreMotion
-import simd
 
 class ViewController: UIViewController {
 
@@ -15,32 +14,26 @@ class ViewController: UIViewController {
     @IBOutlet var yTxt: UILabel!
     @IBOutlet var zTxt: UILabel!
     
-    var motionManager: CMMotionManager?
-
+    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    
-    func startUpdates() {
-        guard let motionManager = motionManager, motionManager.isGyroAvailable else { return }
-        
-        
-        motionManager.gyroUpdateInterval = TimeInterval(1)
-        motionManager.showsDeviceMovementDisplay = true
-        
-        motionManager.startGyroUpdates(to: .main) { gyroData, error in
-            guard let gyroData = gyroData else { return }
+
+        locationManager.requestWhenInUseAuthorization()
+        var currentLoc: CLLocation!
+        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+        CLLocationManager.authorizationStatus() == .authorizedAlways) {
+           currentLoc = locationManager.location
             
-            self.xTxt.text = String(gyroData.rotationRate.x)
-            self.yTxt.text = String(gyroData.rotationRate.y)
-            self.zTxt.text = String(gyroData.rotationRate.z)
-            
+            let lat: String = String(format: "%f", currentLoc.coordinate.latitude)
+            let lon: String = String(format: "%f", currentLoc.coordinate.longitude)
+            xTxt.text = lat
+            yTxt.text = lon
         }
     }
 
     @IBAction func checkBtn(_ sender: UIButton) {
-        startUpdates()
+        
     }
     
 }
