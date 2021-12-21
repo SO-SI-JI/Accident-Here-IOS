@@ -47,9 +47,9 @@
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="Czt-3x-GBy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="I6r-Qc-ikg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8qC-la-a7X" secondAttribute="trailing" constant="25" id="gDP-Fx-Fpb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8qC-la-a7X" secondAttribute="trailing" constant="20" id="gDP-Fx-Fpb"/>
                             <constraint firstItem="Czt-3x-GBy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pTy-Ga-fDU"/>
-                            <constraint firstItem="8qC-la-a7X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="yO6-00-iYE"/>
+                            <constraint firstItem="8qC-la-a7X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="yO6-00-iYE"/>
                         </constraints>
                     </view>
                 </viewController>
