@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71215E0C277207BF0008F975 /* ico_setting.svg in Resources */ = {isa = PBXBuildFile; fileRef = 71215E0A277207BF0008F975 /* ico_setting.svg */; };
+		71215E0F277209AC0008F975 /* ico_setting_dark.svg in Resources */ = {isa = PBXBuildFile; fileRef = 71215E0E277209AC0008F975 /* ico_setting_dark.svg */; };
 		B49A70A9274D0297008C459C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49A70A8274D0297008C459C /* AppDelegate.swift */; };
 		B49A70AB274D0297008C459C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49A70AA274D0297008C459C /* SceneDelegate.swift */; };
 		B49A70AD274D0297008C459C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49A70AC274D0297008C459C /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71215E0A277207BF0008F975 /* ico_setting.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ico_setting.svg; sourceTree = "<group>"; };
+		71215E0E277209AC0008F975 /* ico_setting_dark.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ico_setting_dark.svg; path = ../../../../Downloads/ico_setting_dark.svg; sourceTree = "<group>"; };
 		B49A70A5274D0297008C459C /* AccidentHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccidentHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B49A70A8274D0297008C459C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B49A70AA274D0297008C459C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				B49A70B1274D029A008C459C /* Assets.xcassets */,
 				B49A70B3274D029A008C459C /* LaunchScreen.storyboard */,
 				B49A70B6274D029A008C459C /* Info.plist */,
+				71215E0A277207BF0008F975 /* ico_setting.svg */,
+				71215E0E277209AC0008F975 /* ico_setting_dark.svg */,
 			);
 			path = AccidentHere;
 			sourceTree = "<group>";
@@ -125,7 +131,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B49A70B5274D029A008C459C /* LaunchScreen.storyboard in Resources */,
+				71215E0F277209AC0008F975 /* ico_setting_dark.svg in Resources */,
 				B49A70B2274D029A008C459C /* Assets.xcassets in Resources */,
+				71215E0C277207BF0008F975 /* ico_setting.svg in Resources */,
 				B49A70B0274D0297008C459C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
