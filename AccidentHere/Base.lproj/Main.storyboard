@@ -28,8 +28,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Czt-3x-GBy">
                                 <rect key="frame" x="95" y="314.66666666666669" width="200" height="215.00000000000006"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8C7-ys-yCG">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="191"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8C7-ys-yCG">
+                                        <rect key="frame" x="0.0" y="0.0" width="102.33333333333333" height="191"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="160"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -52,6 +52,10 @@
                             <constraint firstItem="8qC-la-a7X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="yO6-00-iYE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="speedLabel" destination="8C7-ys-yCG" id="F1A-7E-qPb"/>
+                        <outlet property="statusLabel" destination="6tb-xv-fCD" id="gWp-Qm-mde"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
