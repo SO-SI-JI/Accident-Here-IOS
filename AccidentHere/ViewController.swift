@@ -49,7 +49,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             if (speed > baseline) {
                 self.view.backgroundColor = UIColor.red
             } else {
-                self.view.backgroundColor = nil
+                self.view.backgroundColor = UIColor(named: "backgroundColor")
             }
             
             speedLabel.text = (String(format: "%.0f", speed))
