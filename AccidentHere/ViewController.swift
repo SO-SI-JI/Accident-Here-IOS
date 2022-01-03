@@ -63,6 +63,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 self.motion.startAccelerometerUpdates()
             } else {
                 self.view.backgroundColor = UIColor(named: "backgroundColor")
+                statusLabel.textColor = UIColor.systemGray5
                 self.motion.stopAccelerometerUpdates()
             }
             
