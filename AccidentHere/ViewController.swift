@@ -12,9 +12,9 @@ import AVFoundation
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
     var locationManager: CLLocationManager = CLLocationManager()
-    var audioPlayer : AVAudioPlayer!
+    var audioPlayer: AVAudioPlayer!
     let motion = CMMotionManager()
-    var audioFile : URL!
+    var audioFile: URL!
     var baseline = 10.0  // 충돌 감지가 시작되는 최소 속도
     var collisionSensitivity = 8.0 // 충돌 감지의 민감도 (낮을수록 민감)
     
@@ -78,13 +78,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             motion.accelerometerUpdateInterval = 1.0 / 60.0
             
             let sensitivityValue = self.collisionSensitivity
-            let timer = Timer(fire: Date(), interval: (1.0/60.0), repeats: true, block: { (timer) in
+            let timer = Timer(fire: Date(), interval: (1.0 / 60.0), repeats: true, block: { (timer) in
                 if let data = self.motion.accelerometerData {
                     let val_x = data.acceleration.x
                     let val_y = data.acceleration.y
                     let val_z = data.acceleration.z
                     
-                    if val_x > sensitivityValue || val_y > sensitivityValue || val_z > sensitivityValue{
+                    if val_x > sensitivityValue || val_y > sensitivityValue || val_z > sensitivityValue {
                         print("충돌 감지")
                         print("X : \(val_x) Y : \(val_y) Z : \(val_z)")
                         self.audioPlayer.play()
@@ -95,8 +95,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
     }
     
-    func initPlay(){
-        do{
+    func initPlay() {
+        do {
             audioPlayer = try AVAudioPlayer(contentsOf: audioFile)
         } catch let error as NSError{
             print("Error Initial Play")
