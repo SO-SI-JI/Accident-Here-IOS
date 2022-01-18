@@ -19,7 +19,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     var baseline = 10.0  // 충돌 감지가 시작되는 최소 속도
     var collisionSensitivity = 8.0 // 충돌 감지의 민감도 (낮을수록 민감)
     let carAnimationView: AnimationView = .init(name: "car")
-    let loadingAnimationView: AnimationView = .init(name: "loading")
     
     @IBOutlet var speedLabel: UILabel!
     @IBOutlet var statusLabel: UILabel!
@@ -34,19 +33,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         initPlay()
         
         self.view.addSubview(carAnimationView)
-        self.view.addSubview(loadingAnimationView)
+        //self.view.addSubview(loadingAnimationView)
         
         carAnimationView.frame = self.view.bounds
-        loadingAnimationView.frame = CGRect(x: 0, y: 0, width: 90, height: 90)
         carAnimationView.center = self.view.center
-        loadingAnimationView.center = self.view.center
         carAnimationView.contentMode = .scaleAspectFit
-        loadingAnimationView.contentMode = .scaleAspectFit
-        
         carAnimationView.loopMode = .loop
-        loadingAnimationView.loopMode = .loop
 
-        self.loadingAnimationView.play()
+        //self.loadingAnimationView.play()
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
 
@@ -78,12 +72,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 self.statusLabel.textColor = UIColor.red
                 self.motion.startAccelerometerUpdates()
                 self.carAnimationView.play()
-                self.loadingAnimationView.stop()
             } else {
                 statusLabel.textColor = UIColor.systemGray5
                 self.motion.stopAccelerometerUpdates()
                 self.carAnimationView.stop()
-                self.loadingAnimationView.play()
             }
             speedLabel.text = (String(format: "%.0f", speed))
         } else {
