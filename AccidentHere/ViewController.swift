@@ -8,6 +8,7 @@ import UIKit
 import CoreLocation
 import CoreMotion
 import AVFoundation
+import Lottie
 
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
@@ -17,6 +18,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     var audioFile: URL!
     var baseline = 10.0  // 충돌 감지가 시작되는 최소 속도
     var collisionSensitivity = 8.0 // 충돌 감지의 민감도 (낮을수록 민감)
+    let carAnimationView: AnimationView = .init(name: "car")
+    let loadingAnimationView: AnimationView = .init(name: "loading")
     
     @IBOutlet var speedLabel: UILabel!
     @IBOutlet var statusLabel: UILabel!
@@ -30,6 +33,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         initAccelerometer()
         initPlay()
         
+        self.view.addSubview(carAnimationView)
+        self.view.addSubview(loadingAnimationView)
+        
+        carAnimationView.frame = self.view.bounds
+        loadingAnimationView.frame = CGRect(x: 0, y: 0, width: 90, height: 90)
+        carAnimationView.center = self.view.center
+        loadingAnimationView.center = self.view.center
+        carAnimationView.contentMode = .scaleAspectFit
+        loadingAnimationView.contentMode = .scaleAspectFit
+        
+        carAnimationView.loopMode = .loop
+        loadingAnimationView.loopMode = .loop
+
+        self.loadingAnimationView.play()
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
 
@@ -58,15 +75,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         // Checking if speed is less than zero
         if (speed > 0) {
             if (speed > baseline) {
-                self.view.backgroundColor = UIColor.red
-                self.statusLabel.textColor = UIColor.white
+                self.statusLabel.textColor = UIColor.red
                 self.motion.startAccelerometerUpdates()
+                self.carAnimationView.play()
+                self.loadingAnimationView.stop()
             } else {
-                self.view.backgroundColor = UIColor(named: "backgroundColor")
                 statusLabel.textColor = UIColor.systemGray5
                 self.motion.stopAccelerometerUpdates()
+                self.carAnimationView.stop()
+                self.loadingAnimationView.play()
             }
-            
             speedLabel.text = (String(format: "%.0f", speed))
         } else {
             speedLabel.text = "0"
