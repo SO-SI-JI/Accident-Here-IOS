@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7117856B2796EE7800C13ACE /* car.json in Resources */ = {isa = PBXBuildFile; fileRef = 7117856A2796EE7800C13ACE /* car.json */; };
+		7117856E2796EEC400C13ACE /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7117856D2796EEC400C13ACE /* Lottie */; };
+		711785702796EEC400C13ACE /* _LottieCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7117856F2796EEC400C13ACE /* _LottieCore */; };
 		717154CD2783344E000CC718 /* Blop Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 717154CC2783344E000CC718 /* Blop Sound.mp3 */; };
 		B49A70A9274D0297008C459C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49A70A8274D0297008C459C /* AppDelegate.swift */; };
 		B49A70AB274D0297008C459C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49A70AA274D0297008C459C /* SceneDelegate.swift */; };
@@ -17,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7117856A2796EE7800C13ACE /* car.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car.json; sourceTree = "<group>"; };
 		717154CC2783344E000CC718 /* Blop Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Blop Sound.mp3"; sourceTree = "<group>"; };
 		B49A70A5274D0297008C459C /* AccidentHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccidentHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B49A70A8274D0297008C459C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				711785702796EEC400C13ACE /* _LottieCore in Frameworks */,
+				7117856E2796EEC400C13ACE /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +70,7 @@
 				B49A70AE274D0297008C459C /* Main.storyboard */,
 				B49A70B1274D029A008C459C /* Assets.xcassets */,
 				B49A70B3274D029A008C459C /* LaunchScreen.storyboard */,
+				7117856A2796EE7800C13ACE /* car.json */,
 				B49A70B6274D029A008C459C /* Info.plist */,
 				717154CC2783344E000CC718 /* Blop Sound.mp3 */,
 			);
@@ -86,6 +93,10 @@
 			dependencies = (
 			);
 			name = AccidentHere;
+			packageProductDependencies = (
+				7117856D2796EEC400C13ACE /* Lottie */,
+				7117856F2796EEC400C13ACE /* _LottieCore */,
+			);
 			productName = AccidentHere;
 			productReference = B49A70A5274D0297008C459C /* AccidentHere.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +124,9 @@
 				Base,
 			);
 			mainGroup = B49A709C274D0297008C459C;
+			packageReferences = (
+				7117856C2796EEC400C13ACE /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = B49A70A6274D0297008C459C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,6 +144,7 @@
 				B49A70B5274D029A008C459C /* LaunchScreen.storyboard in Resources */,
 				B49A70B2274D029A008C459C /* Assets.xcassets in Resources */,
 				717154CD2783344E000CC718 /* Blop Sound.mp3 in Resources */,
+				7117856B2796EE7800C13ACE /* car.json in Resources */,
 				B49A70B0274D0297008C459C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +360,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7117856C2796EEC400C13ACE /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7117856D2796EEC400C13ACE /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7117856C2796EEC400C13ACE /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		7117856F2796EEC400C13ACE /* _LottieCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7117856C2796EEC400C13ACE /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = _LottieCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B49A709D274D0297008C459C /* Project object */;
 }
